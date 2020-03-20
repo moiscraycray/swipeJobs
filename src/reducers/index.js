@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
+import userReducer from './userReducer';
+import matchesReducer from './matchesReducer';
 
 export default combineReducers({
-  // TODO: replace this with real reducer
-  replaceMe: () => 'replace ths'
+  user: userReducer,
+  matches: matchesReducer
 });
