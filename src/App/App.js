@@ -20,9 +20,11 @@ const App = ({ fetchUser, fetchMatches, user, matches }) => {
       <Header
         user={user}
       />
-      <JobDetails
-        strings={strings}
-      />
+      <div className="light-grey-background">
+        <JobDetails
+          strings={strings}
+        />
+      </div>
     </>
   );
 }

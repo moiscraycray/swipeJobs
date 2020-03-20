@@ -1,4 +1,10 @@
-.buttons {
-  display: flex;
-  justify-content: space-around;
+.job-details-container {
+  background-color: white;
+  border-radius: 5px;
+
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+  }
 }
