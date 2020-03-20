@@ -10,3 +10,14 @@ export const fetchUser = () => {
     });
   }
 };
+
+export const fetchMatches = () => {
+  return async (dispatch) => {
+    const response = await swipeJob.get('/matches');
+
+    dispatch({
+      type: 'FETCH_MATCHES',
+      payload: response.data
+    });
+  };
+};

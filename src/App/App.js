@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchUser } from '../actions';
+import { fetchUser, fetchMatches } from '../actions';
 
 import strings from './strings.json';
 
@@ -9,10 +9,11 @@ import JobDetails from '../components/JobDetails';
 
 import './App.scss';
 
-const App = ({ fetchUser, user }) => {
+const App = ({ fetchUser, fetchMatches, user, matches }) => {
   useEffect(() => {
     fetchUser();
-  }, [fetchUser]);
+    fetchMatches();
+  }, [fetchUser, fetchMatches]);
 
   return (
     <>
@@ -27,10 +28,16 @@ const App = ({ fetchUser, user }) => {
 }
 
 const mapStateToProps = (state) => {
-  return { user: state.user };
+  return {
+    user: state.user,
+    matches: state.matches
+  };
 };
 
 export default connect(
   mapStateToProps,
-  { fetchUser }
+  {
+    fetchUser,
+    fetchMatches
+  }
 )(App);
