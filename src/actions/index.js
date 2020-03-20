@@ -6,7 +6,7 @@ export const fetchUser = () => {
 
     dispatch({
       type: 'FETCH_USER',
-      payload: response
+      payload: response.data
     });
   }
 };

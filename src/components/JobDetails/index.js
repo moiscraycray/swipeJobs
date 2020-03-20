@@ -8,7 +8,7 @@ import JobTitle from '../JobTitle';
 import Button from '../Button';
 import ColorBack from '../ColorBack';
 
-const JobDetails = ({ fetchUser, strings }) => {
+const JobDetails = ({ fetchUser, strings, user }) => {
   useEffect(() => {
     fetchUser();
   }, [fetchUser]);
