@@ -1,16 +1,36 @@
-import React from 'react';
-import './App.scss';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { fetchUser } from '../actions';
 
 import strings from './strings.json';
 
+import Header from '../components/Header';
 import JobDetails from '../components/JobDetails';
 
-const App = () => {
+import './App.scss';
+
+const App = ({ fetchUser, user }) => {
+  useEffect(() => {
+    fetchUser();
+  }, [fetchUser]);
+
   return (
-    <JobDetails
-      strings={strings}
-    />
+    <>
+      <Header
+        user={user}
+      />
+      <JobDetails
+        strings={strings}
+      />
+    </>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return { user: state.user };
+};
+
+export default connect(
+  mapStateToProps,
+  { fetchUser }
+)(App);

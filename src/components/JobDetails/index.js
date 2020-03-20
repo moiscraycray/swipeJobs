@@ -1,21 +1,13 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import { fetchUser } from '../../actions';
+import React from 'react';
 
-import Header from '../Header';
 import HeroImage from '../HeroImage';
 import JobTitle from '../JobTitle';
 import Button from '../Button';
 import ColorBack from '../ColorBack';
 
-const JobDetails = ({ fetchUser, strings, user }) => {
-  useEffect(() => {
-    fetchUser();
-  }, [fetchUser]);
-
+const JobDetails = ({ strings }) => {
   return (
     <>
-      <Header />
       <div className="container">
         <HeroImage />
         <JobTitle />
@@ -43,11 +35,4 @@ const JobDetails = ({ fetchUser, strings, user }) => {
   )
 }
 
-const mapStateToProps = (state) => {
-  return { user: state.user };
-};
-
-export default connect(
-  mapStateToProps,
-  { fetchUser }
-)(JobDetails);
+export default JobDetails;
