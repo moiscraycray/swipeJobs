@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.scss';
 
-import Header from './Header/Header';
-import HeroImage from './HeroImage/HeroImage';
-import JobTitle from './JobTitle/JobTitle';
-import Button from './Button/Button';
-import ColorBack from './ColorBack/ColorBack';
+import Header from '../components/Header/Header';
+import HeroImage from '../components/HeroImage/HeroImage';
+import JobTitle from '../components/JobTitle/JobTitle';
+import Button from '../components/Button/Button';
+import ColorBack from '../components/ColorBack/ColorBack';
 
 const strings = {
   confirmText: "I'll Take it",
