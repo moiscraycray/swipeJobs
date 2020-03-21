@@ -1,5 +1,12 @@
 import React from 'react';
 
+import {
+  FaCalendarAlt,
+  FaMapMarkerAlt,
+  FaTools,
+  FaUserCircle
+} from "react-icons/fa";
+
 import HeroImage from '../HeroImage';
 import JobTitle from '../JobTitle';
 import Button from '../Button';
