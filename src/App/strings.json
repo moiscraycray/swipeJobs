@@ -3,5 +3,10 @@
   "rejectText": "No Thanks",
   "distance": "Distance",
   "hourlyRate": "Hourly Rate",
-  "miles": "miles"
+  "miles": "miles",
+  "shiftDates": "Shift Dates",
+  "location": "Location",
+  "requirements": "Requirements",
+  "reportTo": "Report To",
+  "milesFromYourJobSearchLocation": "miles from your job search location"
 }

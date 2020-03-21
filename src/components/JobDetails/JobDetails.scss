@@ -13,6 +13,22 @@
     margin: 0;
   }
 
+  .detail-blocks-container {
+    padding: 0 1rem;
+  }
+
+  .list-block-container {
+    border-bottom: 1px solid lightgrey;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  .list-block-container:last-child {
+    border-bottom: 0;
+  }
+
   .buttons {
     display: flex;
     justify-content: space-around;
