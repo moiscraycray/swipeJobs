@@ -12,11 +12,11 @@ h1, h2, h3, h4, h5, h6, p, a, li {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 p, a, li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .container {
@@ -63,4 +63,5 @@ p, a, li {
 .light-grey-background {
   background-color: lightgrey;
   padding: 1rem;
+  height: 100vh;
 }
