@@ -59,6 +59,7 @@ const JobDetails = ({ strings, handleAcceptJob, handleRejectJob, currentMatch })
             strings={strings}
             milesToTravel={milesToTravel}
             branchPhoneNumber={branchPhoneNumber}
+            zoneId={company.address.zoneId}
             {...c}
           />
         ))}

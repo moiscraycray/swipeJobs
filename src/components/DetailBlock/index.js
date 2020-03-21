@@ -1,5 +1,5 @@
 import React from 'react';
-import './DetailBlock.scss';
+import moment from 'moment-timezone';
 
 import {
   FaCalendarAlt,
@@ -7,6 +7,8 @@ import {
   FaTools,
   FaUserCircle
 } from "react-icons/fa";
+
+import './DetailBlock.scss';
 
 const DetailBlock = ({
   strings,
@@ -16,12 +18,19 @@ const DetailBlock = ({
   name,
   phone,
   milesToTravel,
-  branchPhoneNumber
+  branchPhoneNumber,
+  zoneId
 }) => {
   let Icon, heading, content;
   if (shifts) {
     Icon = FaCalendarAlt;
     heading = strings.shiftDates;
+    const formattedShifts = shifts.map(d => {
+      const formattedStartDate = moment(d.startDate).tz(zoneId).format('MMM D, ddd hh:mm a').toUpperCase();
+      const formattedEndDate = moment(d.endDate).tz(zoneId).format('hh:mm a z').toUpperCase();
+      return <li key={formattedStartDate}>{`${formattedStartDate} - ${formattedEndDate}`}</li>
+    });
+    content = <ul>{formattedShifts}</ul>;
   } else if (address) {
     Icon = FaMapMarkerAlt;
     heading = strings.location;
@@ -36,7 +45,7 @@ const DetailBlock = ({
     heading = strings.requirements;
     content = (
       <ul>
-        {requirements.map(li => <li key={li}>{li}</li>)}
+        {requirements.map(li => <li className="requirement-list-item" key={li}>{li}</li>)}
       </ul>
     )
   } else if (name) {
@@ -51,7 +60,7 @@ const DetailBlock = ({
 
   return (
     <div className="detail-block-container">
-      <Icon size="1.5rem" />
+      <Icon size="1.25rem" />
       <div>
         <h3>{heading}</h3>
         {content}

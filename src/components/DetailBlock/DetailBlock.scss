@@ -17,7 +17,7 @@
       list-style: none;
       padding: 0;
 
-      li:before {
+      .requirement-list-item:before {
         content: "- ";
         text-indent: -5px;
       }
