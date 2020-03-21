@@ -2,6 +2,17 @@
   background-color: white;
   border-radius: 5px;
 
+  .job-info-title {
+    font-size: 0.8rem;
+  }
+
+  .job-info {
+    color: white;
+    font-weight: 900;
+    font-size: 1.75rem;
+    margin: 0;
+  }
+
   .buttons {
     display: flex;
     justify-content: space-around;
