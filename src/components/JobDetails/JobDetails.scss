@@ -1,4 +1,37 @@
-.buttons {
-  display: flex;
-  justify-content: space-around;
+.job-details-container {
+  background-color: white;
+  border-radius: 5px;
+
+  .job-info-title {
+    font-size: 0.8rem;
+  }
+
+  .job-info {
+    color: white;
+    font-weight: 900;
+    font-size: 1.75rem;
+    margin: 0;
+  }
+
+  .detail-blocks-container {
+    padding: 0 1rem;
+  }
+
+  .list-block-container {
+    border-bottom: 1px solid lightgrey;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  .list-block-container:last-child {
+    border-bottom: 0;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+  }
 }
