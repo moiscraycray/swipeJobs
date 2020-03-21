@@ -1,6 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { fetchUser, fetchMatches } from '../actions';
+import {
+  fetchUser,
+  fetchMatches,
+  acceptJob,
+  rejectJob
+} from '../actions';
 
 import strings from './strings.json';
 
@@ -9,11 +14,31 @@ import JobDetails from '../components/JobDetails';
 
 import './App.scss';
 
-const App = ({ fetchUser, fetchMatches, user, matches }) => {
+const App = ({
+  fetchUser,
+  fetchMatches,
+  user,
+  matches
+}) => {
+  const [matchesData, setMatchesData] = useState([]);
+  const [currentMatch, setCurrentMatch] = useState([]);
+
   useEffect(() => {
     fetchUser();
     fetchMatches();
   }, [fetchUser, fetchMatches]);
+
+  useEffect(() => {
+    setMatchesData([...matches]);
+  }, [matches])
+
+  useEffect(() => {
+    setCurrentMatch(matchesData[0]);
+  }, [matchesData])
+
+  if (!matches.length || !matchesData.length || !currentMatch) {
+    return <p>Loading...</p>
+  }
 
   return (
     <>
@@ -23,6 +48,9 @@ const App = ({ fetchUser, fetchMatches, user, matches }) => {
       <div className="light-grey-background">
         <JobDetails
           strings={strings}
+          handleAcceptJob={acceptJob}
+          handleRejectJob={rejectJob}
+          currentMatch={currentMatch}
         />
       </div>
     </>
@@ -40,6 +68,8 @@ export default connect(
   mapStateToProps,
   {
     fetchUser,
-    fetchMatches
+    fetchMatches,
+    acceptJob,
+    rejectJob
   }
 )(App);

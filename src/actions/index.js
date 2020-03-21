@@ -21,3 +21,27 @@ export const fetchMatches = () => {
     });
   };
 };
+
+export const acceptJob = (jobId) => {
+  return async (dispatch) => {
+    const response = await swipeJob.get(`/job/​${jobId}/accept`);
+    console.log(response)
+
+    dispatch({
+      type: 'ACCEPT_JOB',
+      // payload: response.data
+    });
+  };
+}
+
+export const rejectJob = (jobId) => {
+  return async (dispatch) => {
+    const response = await swipeJob.get(`/job/​${jobId}/reject`);
+    console.log(response)
+
+    dispatch({
+      type: 'REJECT_JOB',
+      // payload: response.data
+    });
+  };
+}
