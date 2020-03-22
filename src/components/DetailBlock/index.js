@@ -5,7 +5,8 @@ import {
   FaCalendarAlt,
   FaMapMarkerAlt,
   FaTools,
-  FaUserCircle
+  FaUserCircle,
+  FaChevronRight
 } from "react-icons/fa";
 
 import './DetailBlock.scss';
@@ -52,20 +53,39 @@ const DetailBlock = ({
     Icon = FaUserCircle;
     heading = strings.reportTo;
     const num = phone || branchPhoneNumber
-    const areaCode = num.slice(0, 3);
-    const midNum = num.slice(3, 6);
-    const endNum = num.slice(6, 10);
-    content = <p>{name} {num && <a href={`tel:${num}`}>{`(${areaCode})`} {midNum} {endNum}</a>}</p>
+    if (num.length === 10) {
+      const areaCode = num.slice(0, 3);
+      const midNum = num.slice(3, 6);
+      const endNum = num.slice(6, 10);
+      content = <p>{name} {num && <a href={`tel:${num}`}>{`(${areaCode})`} {midNum} {endNum}</a>}</p>
+    }
   }
 
-  return (
-    <div className="detail-block-container">
+  const children = (
+    <>
       <Icon size="1.25rem" />
       <div>
         <h3>{heading}</h3>
         {content}
       </div>
-    </div>
+      <div style={{ float: "right" }}>
+        {address && <FaChevronRight size="1.5rem" />}
+      </div>
+    </>
+  )
+
+  return (
+    <>
+      {address ? (
+        <a className="detail-block-container" href={`https://maps.google.com/?q=${address.formattedAddress}`}>
+          {children}
+        </a>
+      ) : (
+        <div className="detail-block-container">
+          {children}
+        </div>
+      )}
+    </>
   )
 };
 

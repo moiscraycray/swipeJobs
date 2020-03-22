@@ -24,24 +24,22 @@ export const fetchMatches = () => {
 
 export const acceptJob = (jobId) => {
   return async (dispatch) => {
-    const response = await swipeJob.get(`/job/​${jobId}/accept`);
-    console.log(response)
+    const response = await swipeJob.get(`/job/${jobId}/accept`);
 
     dispatch({
       type: 'ACCEPT_JOB',
-      // payload: response.data
+      jobId
     });
   };
 }
 
 export const rejectJob = (jobId) => {
   return async (dispatch) => {
-    const response = await swipeJob.get(`/job/​${jobId}/reject`);
-    console.log(response)
+    const response = await swipeJob.get(`/job/${jobId}/reject`);
 
     dispatch({
       type: 'REJECT_JOB',
-      // payload: response.data
+      jobId
     });
   };
 }

@@ -1,9 +1,13 @@
 import React from 'react';
 import './Button.scss';
 
-const Button = ({ disabled = null, text }) => {
+const Button = ({ reject = null, text, onHandleClick, dataAction, data }) => {
   return (
-    <button className={disabled && "disabled"}>
+    <button
+      data-action={dataAction}
+      className={reject && "disabled"}
+      onClick={(e) => onHandleClick(e, data)}
+    >
       {text}
     </button>
   )
