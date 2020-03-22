@@ -24,9 +24,7 @@ export const fetchMatches = () => {
 
 export const acceptJob = (jobId) => {
   return async (dispatch) => {
-    console.log('accept url', `/job/​${jobId}/accept`);
     const response = await swipeJob.get(`/job/${jobId}/accept`);
-    console.log(response)
 
     dispatch({
       type: 'ACCEPT_JOB',
@@ -37,9 +35,7 @@ export const acceptJob = (jobId) => {
 
 export const rejectJob = (jobId) => {
   return async (dispatch) => {
-    console.log('reject', `/job/​${jobId}/reject`);
     const response = await swipeJob.get(`/job/${jobId}/reject`);
-    console.log(response)
 
     dispatch({
       type: 'REJECT_JOB',

@@ -10,7 +10,6 @@ import './JobDetails.scss';
 
 const JobDetails = ({ strings, handleClick, currentMatch }) => {
   const {
-    branch,
     branchPhoneNumber,
     company,
     jobId,
