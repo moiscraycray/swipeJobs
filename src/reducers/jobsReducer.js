@@ -28,7 +28,11 @@ export default (state = initialState, action) => {
       }
     case 'REJECT_JOB':
       console.log('action reject jobs', action);
-      return action.payload;
+      // return action.payload;
+      return {
+        ...state,
+        selectedJobId: action.jobId
+      }
     default:
       return state;
   }

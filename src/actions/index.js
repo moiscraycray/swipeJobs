@@ -1,5 +1,4 @@
 import swipeJob from '../apis/swipeJob';
-import axios from 'axios';
 
 export const fetchUser = () => {
   return async (dispatch) => {
@@ -39,12 +38,12 @@ export const acceptJob = (jobId) => {
 export const rejectJob = (jobId) => {
   return async (dispatch) => {
     console.log('reject', `/job/​${jobId}/reject`);
-    const response = await swipeJob.get(`/job/​${jobId}/reject`);
+    const response = await swipeJob.get(`/job/${jobId}/reject`);
     console.log(response)
 
     dispatch({
       type: 'REJECT_JOB',
-      payload: response.data
+      jobId
     });
   };
 }
