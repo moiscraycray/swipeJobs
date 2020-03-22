@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import userReducer from './userReducer';
-import matchesReducer from './matchesReducer';
+// import matchesReducer from './matchesReducer';
+import jobsReducer from './jobsReducer';
 
 export default combineReducers({
   user: userReducer,
-  matches: matchesReducer
+  jobs: jobsReducer
+  // matches: matchesReducer
 });
