@@ -8,9 +8,8 @@ import DetailBlock from '../DetailBlock';
 
 import './JobDetails.scss';
 
-const JobDetails = ({ strings, handleAcceptJob, handleRejectJob, currentMatch }) => {
+const JobDetails = ({ strings, handleClick, currentMatch }) => {
   const {
-    branch,
     branchPhoneNumber,
     company,
     jobId,
@@ -66,13 +65,17 @@ const JobDetails = ({ strings, handleAcceptJob, handleRejectJob, currentMatch })
       </div>
       <div className="buttons">
         <Button
+          dataAction="reject"
+          data={jobId}
           text={strings.rejectText}
-          onClick={handleRejectJob}
-          disabled
+          onHandleClick={handleClick}
+          reject
         />
         <Button
+          dataAction="accept"
+          data={jobId}
           text={strings.confirmText}
-          onClick={handleAcceptJob}
+          onHandleClick={handleClick}
         />
       </div>
     </div>
