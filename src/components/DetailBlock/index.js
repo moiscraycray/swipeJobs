@@ -68,7 +68,7 @@ const DetailBlock = ({
         <h3>{heading}</h3>
         {content}
       </div>
-      <div style={{ float: "right" }}>
+      <div>
         {address && <FaChevronRight size="1.5rem" />}
       </div>
     </>
