@@ -22,7 +22,7 @@ const defaultProps = {
 
 const wrapper = shallow(<HeroImage {...defaultProps} />);
 
-describe('<Header /> basic component structure', () => {
+describe('<HeroImage /> basic component structure', () => {
   it('should render one img element', () => {
     expect(wrapper.find('img').length).to.equal(1);
   });
