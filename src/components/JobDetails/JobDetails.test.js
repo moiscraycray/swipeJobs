@@ -16,7 +16,6 @@ const expect = chai.expect;
 configure({ adapter: new Adapter() });
 
 const defaultProps = {
-  // handleClick: sinon.spy(),
   currentMatch: {
     shifts: [],
     company: {
