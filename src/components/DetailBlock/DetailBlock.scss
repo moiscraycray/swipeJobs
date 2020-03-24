@@ -12,6 +12,10 @@
   div {
     padding-left: 1rem;
 
+    &:last-child {
+      float: right;
+    }
+
     span {
       font-size: 0.75rem;
     }

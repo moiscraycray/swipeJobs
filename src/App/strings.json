@@ -8,5 +8,6 @@
   "location": "Location",
   "requirements": "Requirements",
   "reportTo": "Report To",
-  "milesFromYourJobSearchLocation": "miles from your job search location"
+  "milesFromYourJobSearchLocation": "miles from your job search location",
+  "swipejobs": "swipejobs"
 }

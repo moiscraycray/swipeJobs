@@ -38,7 +38,7 @@ const DetailBlock = ({
     content = (
       <>
         <p>{address.formattedAddress}</p>
-        <span>{milesToTravel.toFixed(2)} {strings.milesFromYourJobSearchLocation}</span>
+        <span>{`${milesToTravel.toFixed(2)} ${strings.milesFromYourJobSearchLocation}`}</span>
       </>
     )
   } else if (requirements) {
@@ -68,7 +68,7 @@ const DetailBlock = ({
         <h3>{heading}</h3>
         {content}
       </div>
-      <div style={{ float: "right" }}>
+      <div>
         {address && <FaChevronRight size="1.5rem" />}
       </div>
     </>

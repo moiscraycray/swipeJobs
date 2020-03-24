@@ -66,6 +66,7 @@ class App extends React.Component {
       <>
         <Header
           user={this.props.user}
+          strings={strings}
         />
         <div className="light-grey-background">
           <JobDetails
