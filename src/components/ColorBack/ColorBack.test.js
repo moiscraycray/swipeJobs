@@ -26,7 +26,7 @@ describe('<ColorBack /> basic component structure', () => {
 
 describe('<ColorBack /> props update component structure', () => {
   wrapper.setProps({ children: [<p key="hello">hello</p>, <p key="world">world</p>] });
-  it('should render 2 p tags', () => {
+  it('should render two p tags', () => {
     expect(wrapper.find('p').length).to.equal(2);
   });
 

@@ -38,7 +38,7 @@ const DetailBlock = ({
     content = (
       <>
         <p>{address.formattedAddress}</p>
-        <span>{milesToTravel.toFixed(2)} {strings.milesFromYourJobSearchLocation}</span>
+        <span>{`${milesToTravel.toFixed(2)} ${strings.milesFromYourJobSearchLocation}`}</span>
       </>
     )
   } else if (requirements) {
